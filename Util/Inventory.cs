@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using GameEntity;
 using GameWeapon;
-
+//How to handle entities being equipped to primary and secondary slots
 namespace GameInventory{
     class Inventory{
         private Entity primary {get;set;}
