@@ -2,7 +2,7 @@
 using GameInventory;
 using GameWeapon;
 using GameCharacter;
-
+//
 namespace csharp
 {
     class Program

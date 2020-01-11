@@ -1,5 +1,5 @@
 using GameEntity;
-
+//not add
 namespace GameWeapon{
 
     class Weapon : Entity
