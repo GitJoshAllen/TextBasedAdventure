@@ -4,10 +4,12 @@ namespace GameCharacter{
     class Character : Entity{
         private string race {get;set;}
         private string job {get;set;}
-        public Character(string name, int health, string description, bool breakable, bool hasInventory, int damage, string race, string job) : base(name, health, description, breakable, hasInventory, damage){
+        public bool player {get;set;}
+        public Character(string name, int health, string description, bool breakable, bool hasInventory, int damage, string race, string job, bool player) : base(name, health, description, breakable, hasInventory, damage){
             this.race = race;
             this.job = job;
             this.inventory = base.inventory;
+            this.player = player;
         }
         public void Equip(Entity entity){
 
@@ -17,9 +19,9 @@ namespace GameCharacter{
         public Entity RightHand(){
             return base.Primary();
         }
-        
+
         static public Character OrcWizard(){
-            return new Character("Orc Wizard", 100, "Orc trained in the arcane arts", false, true, 1, "Orc", "Wizard");
+            return new Character("Orc Wizard", 100, "Orc trained in the arcane arts", false, true, 1, "Orc", "Wizard", false);
         }
     }
 }

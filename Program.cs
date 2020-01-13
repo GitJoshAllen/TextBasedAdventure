@@ -2,6 +2,7 @@
 using GameInventory;
 using GameWeapon;
 using GameCharacter;
+using GameInteract;
 //
 namespace csharp
 {
@@ -13,12 +14,12 @@ namespace csharp
             Weapon Spear = Weapon.Spear();
             Weapon Hammer = Weapon.Hammer();
             BigBaddy.EquipRightHand(Hammer);
-            Character player = new Character("Lorik", 100, "XXL PIMP", false, true, 1, "Human", "Lancer");
+            Character player = new Character("Lorik", 100, "XXL PIMP", false, true, 1, "Human", "Lancer", true);
             player.EquipRightHand(Spear);
             Console.WriteLine("Primary object is: {0}", player.RightHand().name); 
             Console.WriteLine("You opponenent is {0}", BigBaddy.name);
 
-            Interact(player, BigBaddy);
+            Interact.Combat(player, BigBaddy);
         }
     }
 }

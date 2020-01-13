@@ -24,7 +24,7 @@ namespace GameEntity{
         public void GiveName(string name){
             this.name = name;
         }
-        public void Health(int value){
+        public void AdjustHealth(int value){
             this.health = this.health + value >= this.maxhealth ? this.maxhealth : 
                 (this.health + value <= 0 ? 0 : this.health + value);
         }
