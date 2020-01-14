@@ -15,6 +15,8 @@ namespace csharp
             Weapon Hammer = Weapon.Hammer();
             BigBaddy.EquipRightHand(Hammer);
             Character player = new Character("Lorik", 111, "XXL PIMP", false, true, 1, "Human", "Lancer", true);
+            Console.WriteLine(Spear.name);
+            Console.WriteLine(Spear.damage);
             player.EquipRightHand(Spear);
             Console.WriteLine("Player health: {0}", player.health);
             Console.WriteLine("Enemy Health: {0}", BigBaddy.health);

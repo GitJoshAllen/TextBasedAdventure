@@ -13,6 +13,8 @@ namespace GameInteract{
                             case "ATTACK":
                                 Attack(entityOne, entityTwo);
                             break;
+                            default:
+                            break;
                         }
                     }else{
 
@@ -26,8 +28,13 @@ namespace GameInteract{
             }
         }
         static private void Attack(Entity entityOne, Entity entityTwo){
-            entityTwo.AdjustHealth(((Character)entityOne).RightHand().damage);
-            
+            Console.WriteLine(((Character)entityOne));
+            var y = ((Character)entityOne);
+            Console.WriteLine(y.RightHand());
+            var x = y.RightHand().name;
+            Console.WriteLine(x);
+            // var w = x.damage;
+            entityTwo.AdjustHealth(3);
             Console.WriteLine("Player health: {0}", entityOne.health);
             Console.WriteLine("Enemy Health: {0}", entityTwo.health);
         }

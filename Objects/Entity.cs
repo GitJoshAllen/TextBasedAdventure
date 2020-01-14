@@ -10,19 +10,24 @@ namespace GameEntity{
         public int health {get; private set;}
         public string description {get; private set;}
         public bool breakable {get;private set;}
-        public int damage {get => this.damage;private set {value = value * -1;}}
+        private int Damage {get;set;}
+        public int damage {get => this.Damage;private set {this.Damage = value * -1;}}
         protected Inventory inventory {get;set;}
         
         public void Inventory(Entity entity) => base.Add(entity);
         public void Inventory() => base.CheckInventory();
         protected Entity(string name, int health, string description, bool breakable, bool hasInventory, int damage): base(){
+            Console.WriteLine("In entity");
+            Console.WriteLine(name);
+            Console.WriteLine(damage);
             this.name = name;
             this.health = health;
             this.description = description;
             this.breakable = breakable;
             this.damage = damage; 
             this.maxhealth = this.health;
-            Console.WriteLine(this.health);
+            
+            //Console.WriteLine("Weapon Name: {0}, Weapon Damage {1}",this.name, this.damage);
         }
         public void GiveName(string name){
             this.name = name;
