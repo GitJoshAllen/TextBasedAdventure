@@ -1,6 +1,7 @@
 using GameCharacter;
 using GameInventory;
 using GameWeapon;
+using System;
 
 namespace GameEntity{
     class Entity : Inventory{
@@ -9,7 +10,7 @@ namespace GameEntity{
         public int health {get; private set;}
         public string description {get; private set;}
         public bool breakable {get;private set;}
-        public int damage {get;private set;}
+        public int damage {get => this.damage;private set {value = value * -1;}}
         protected Inventory inventory {get;set;}
         
         public void Inventory(Entity entity) => base.Add(entity);
@@ -20,6 +21,8 @@ namespace GameEntity{
             this.description = description;
             this.breakable = breakable;
             this.damage = damage; 
+            this.maxhealth = this.health;
+            Console.WriteLine(this.health);
         }
         public void GiveName(string name){
             this.name = name;
@@ -63,6 +66,7 @@ namespace GameEntity{
             }
         }
         protected void Primary(Entity entity) => base.EquipPrimary(entity);
+        protected Entity Primary() => base.GetPrimary();
         protected void Secondary(Entity entity) => base.EquipSecondary(entity);
         //Throwable enitites, could be weapons, potions, etc.. 
 

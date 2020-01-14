@@ -36,8 +36,5 @@ namespace GameInventory{
         public Entity GetPrimary(){
             return this.primary;
         }
-        protected Entity Primary(){
-            return this.primary;
-        }
     }
 }

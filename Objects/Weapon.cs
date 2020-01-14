@@ -25,10 +25,10 @@ namespace GameWeapon{
             return new Weapon("Morning Star", 100, "Zombie killer", false, false, false, 25, false);
         }
         static public Weapon Hammer(){
-            return new Weapon("Hammer", 100, "Blunt one handed weapon", false, false, false, 3, false);
+            return new Weapon("Hammer", 120, "Blunt one handed weapon", false, false, false, 3, false);
         }
         static public Weapon Spear(){
-            return new Weapon("Spear", 100, "Two handed pointed thrusting-throwable weapon", false, true, false, 10, true);
+            return new Weapon("Spear", 101, "Two handed pointed thrusting-throwable weapon", false, true, false, 10, true);
         }
 
     }

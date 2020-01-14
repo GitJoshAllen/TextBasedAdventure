@@ -14,12 +14,13 @@ namespace csharp
             Weapon Spear = Weapon.Spear();
             Weapon Hammer = Weapon.Hammer();
             BigBaddy.EquipRightHand(Hammer);
-            Character player = new Character("Lorik", 100, "XXL PIMP", false, true, 1, "Human", "Lancer", true);
+            Character player = new Character("Lorik", 111, "XXL PIMP", false, true, 1, "Human", "Lancer", true);
             player.EquipRightHand(Spear);
-            Console.WriteLine("Primary object is: {0}", player.RightHand().name); 
-            Console.WriteLine("You opponenent is {0}", BigBaddy.name);
-
-            Interact.Combat(player, BigBaddy);
+            Console.WriteLine("Player health: {0}", player.health);
+            Console.WriteLine("Enemy Health: {0}", BigBaddy.health);
+            Interact.Combat(player,BigBaddy);
+            Console.WriteLine("Player health: {0}", player.health);
+            Console.WriteLine("Enemy Health: {0}", BigBaddy.health);
         }
     }
 }

@@ -16,12 +16,10 @@ namespace GameCharacter{
         }
         public void EquipRightHand(Entity entity) => base.Primary(entity);
         public void EquipLeftHand(Entity entity) => base.Secondary(entity);
-        public Entity RightHand(){
-            return base.Primary();
-        }
+        public Entity RightHand() => base.Primary();
 
         static public Character OrcWizard(){
-            return new Character("Orc Wizard", 100, "Orc trained in the arcane arts", false, true, 1, "Orc", "Wizard", false);
+            return new Character("Orc Wizard", 103, "Orc trained in the arcane arts", false, true, 1, "Orc", "Wizard", false);
         }
     }
 }
