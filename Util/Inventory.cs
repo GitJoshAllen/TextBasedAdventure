@@ -6,11 +6,9 @@ using GameWeapon;
 //
 namespace GameInventory{
     class Inventory{
-        private Entity primary {get;set;}
-        private Entity Secondary {get;set;}
         private List<Weapon> Weapons {get; set;}
         protected Inventory(){}
-        protected void Add(Entity entity){
+        public void Add(Entity entity){
             switch(entity){
                 case Weapon weapon:
                     if(this.Weapons == null){
@@ -20,21 +18,24 @@ namespace GameInventory{
                         this.Weapons.Add(weapon);
                     }
                 break;
+                default:
+                    Console.WriteLine("Could not add to inventory");
+                break;
             }
         }
-        protected void EquipPrimary(Entity entity){
-            this.primary = entity;
-        }
-        protected void EquipSecondary(Entity entity){
-            this.Secondary = entity;
-        }
-        protected void CheckInventory(){
+        public void CheckInventory(){
             Console.WriteLine("Weapons:");
             this.Weapons.ForEach( w => {Console.WriteLine(w.name);});
             Console.WriteLine("----------------");
         }
-        public Entity GetPrimary(){
-            return this.primary;
+        public void CheckWeaponInventory(){
+            Console.WriteLine("Weapons:");
+            this.Weapons.ForEach(w => {Console.WriteLine(w.name);});
+            Console.WriteLine("----------------");
         }
+        public Weapon PullWeapon(string name){
+            return this.Weapons.Find(w => w.name.ToUpper() == name.ToUpper());
+        }
+
     }
 }

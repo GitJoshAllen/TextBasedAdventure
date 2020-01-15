@@ -17,9 +17,6 @@ namespace GameEntity{
         public void Inventory(Entity entity) => base.Add(entity);
         public void Inventory() => base.CheckInventory();
         protected Entity(string name, int health, string description, bool breakable, bool hasInventory, int damage): base(){
-            Console.WriteLine("In entity");
-            Console.WriteLine(name);
-            Console.WriteLine(damage);
             this.name = name;
             this.health = health;
             this.description = description;
@@ -70,9 +67,6 @@ namespace GameEntity{
 
             }
         }
-        protected void Primary(Entity entity) => base.EquipPrimary(entity);
-        protected Entity Primary() => base.GetPrimary();
-        protected void Secondary(Entity entity) => base.EquipSecondary(entity);
         //Throwable enitites, could be weapons, potions, etc.. 
 
     }

@@ -8,10 +8,6 @@ namespace GameWeapon{
         public bool sharp {get; private set;}
         public bool twoHanded {get; private set;}
         public Weapon(string name, int health, string description, bool breakable, bool sharp, bool hasInventory, int damage, bool twoHanded) : base(name, health, description, breakable, hasInventory, damage){
-            Console.WriteLine("In weapon");
-            Console.WriteLine(name);
-
-            Console.WriteLine(damage);
             this.sharp = sharp;
             this.twoHanded = twoHanded;
         }
