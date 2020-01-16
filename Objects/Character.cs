@@ -3,8 +3,11 @@ using GameInventory;
 namespace GameCharacter{
     class Character : Entity{
         private string race {get;set;}
-        private string job {get;set;}
+        public string job {get; private set;}
         public bool player {get;set;}
+        const string orc = "ORC";
+        const string skeleton = "SKELETON";
+        const string goblin = "GOBLIN";
         public Character(string name, int health, string description, bool breakable, bool hasInventory, int damage, string race, string job, bool player = false) : base(name, health, description, breakable, hasInventory, damage){
             this.race = race;
             this.job = job;
