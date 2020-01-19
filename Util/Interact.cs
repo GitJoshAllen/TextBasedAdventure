@@ -27,11 +27,17 @@ namespace GameInteract{
                             case Interact.defend:
                                 Defend(entityOne, entityTwo);
                             break;
+                            case Interact.heal:
+                                Console.WriteLine("\nWhich item will you use to heal?: ");
+                                player.CheckConsumableInventory();
+                                var consumableName = Interact.ReadLine();
+                            break;
                             default:
                             break;
                         }
+                        Console.WriteLine("{1} Health: {0}", entityTwo.health, entityTwo.name);
                     }else{
-
+                        
                     }
                     // if(((CHaracter)enitiyOne).player){
 
@@ -43,25 +49,37 @@ namespace GameInteract{
         }
         static private void Attack(Entity attacker, Entity attackee){
             attackee.AdjustHealth(((Character)attacker).damage);
-            Console.WriteLine("{1} Health: {0}", attackee.health, attackee.name);
         }
         static private void Attack(Weapon weapon, Entity entityTwo){
             entityTwo.AdjustHealth(weapon.damage);
-            Console.WriteLine("{1} Health: {0}", entityTwo.health, entityTwo.name);
+        }
+        static private void Consume(Entity item, Entity patient){
+            patient.AdjustHealth(item.damage);
         }
         static private void Defend(Entity player, Entity enemy){
             switch(((Character)enemy).race.ToUpper()){
                 case Character.orc:
                     Console.WriteLine("{0} no like block! Me want u to hurt!", enemy.name);
                 break;
+                case Character.skeleton:
+                    Console.WriteLine("Block? Like... Def?.. like a rock?! NOO!!!");
+                    enemy.AdjustHealth(-20);
+                break;
+                case Character.goblin:
+                    Console.WriteLine("{0} is quick, it gets past your defence", enemy.name);
+                    player.AdjustHealth(enemy.damage / 2);
+                break;
+                default:
+                    Console.WriteLine("Invalid Entity");
+                break;
             }
-            Console.WriteLine("Block!");
         }
         static private string CombatQuestion(){
                 Console.WriteLine("\n{0} | {1} | {2} | {3}", Interact.attack, Interact.defend, Interact.heal, Interact.talk);
                 var command = Interact.ReadLine();
                 return command;
         }
+
         static public string ReadLine(){
             return Console.ReadLine().ToUpper();
         }

@@ -23,6 +23,13 @@ namespace csharp
             Interact.Combat(player,BigBaddy);
             Console.WriteLine("Player health: {0}", player.health);
             Console.WriteLine("Enemy Health: {0}", BigBaddy.health);
+
+            var name = "josh";
+            nam = "briar";
+
+            Console.WriteLine(name);
+
+        
         }
     }
 }
