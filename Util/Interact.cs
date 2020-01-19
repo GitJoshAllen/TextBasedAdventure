@@ -25,7 +25,7 @@ namespace GameInteract{
                                 Attack(entityTwo, entityOne);
                             break;
                             case Interact.defend:
-                                Defend();
+                                Defend(entityOne, entityTwo);
                             break;
                             default:
                             break;
@@ -49,7 +49,12 @@ namespace GameInteract{
             entityTwo.AdjustHealth(weapon.damage);
             Console.WriteLine("{1} Health: {0}", entityTwo.health, entityTwo.name);
         }
-        static private void Defend(){
+        static private void Defend(Entity player, Entity enemy){
+            switch(((Character)enemy).race.ToUpper()){
+                case Character.orc:
+                    Console.WriteLine("{0} no like block! Me want u to hurt!", enemy.name);
+                break;
+            }
             Console.WriteLine("Block!");
         }
         static private string CombatQuestion(){
